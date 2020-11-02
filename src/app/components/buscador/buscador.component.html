@@ -1,0 +1,14 @@
+<p *ngFor="let item of Resultados"> 
+    <div class="card-columns">
+      <!-- <div class="card fadeIn animated" >
+         <img src="{{Hero.img}}" class="card-img-top" alt="...">
+    
+     <div class="card-body">
+           <h5 class="card-title">{{Hero.nombre}}</h5>
+            <p class="card-text">{{Hero.bio.substring(0,30)}}</p>
+    <small>{{Hero.aparicion}}</small> </p>
+        </div>  
+  </div> -->
+
+  <app-herp-card [PadreHero]="Hero" [Index]="Hero.index" *ngFor= "let Hero of Resultados; let i = index" ></app-herp-card>
+</div>

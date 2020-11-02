@@ -1,0 +1,10 @@
+<div class="card fadeIn animated" *ngFor= "let PadreHero of ArrayPadrePadreHeros; let i = index">
+    <img src="{{PadreHero.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{PadreHero.nombre}}</h5>
+      <p class="card-text">{{PadreHero.bio.substring(0,30)}}</p>
+      <small>{{PadreHero.aparicion}}</small>  
+  </div>
+    <!-- <button (click)= "Navegar(i)" class="btn btn-outline-primary btn-block">Ver más...</button> -->
+  </div>
+</div>
