@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck} from '@angular/core';
 // El Input prepara los componentes Hijos para recibir informacion del PADRE
 import { Router } from '@angular/router'
 
@@ -8,7 +8,16 @@ import { Router } from '@angular/router'
   styles: [
   ]
 })
-export class HeroCardComponent implements OnInit {
+export class HeroCardComponent implements OnInit, OnChanges, DoCheck {
+
+  ngDoCheck(){
+    console.log('Evento DoCheck');
+    
+  }
+
+  ngOnChanges(){
+    console.log('Evento ngOnInit');
+  }
 
 Hero: any = {};
 // Recibir informacion de un componente PADRE
@@ -19,13 +28,17 @@ Hero: any = {};
 @Output() selectedHero: EventEmitter<number>;
 
   constructor( private router: Router) { 
+    console.log('Constructor de Card');
+    
     this.selectedHero = new EventEmitter();
     console.log(this.PadreHero);
   }
   ngOnInit(): void {
+    console.log('Evento ngOnInit');
+    
   }
 
   Navegar(){
-    this.router.navigate('/hero', this.Index)
+    this.router.navigate['/hero'], this.Index;
   }
 }

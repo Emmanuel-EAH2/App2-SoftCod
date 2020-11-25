@@ -14,7 +14,9 @@ import { AboutComponent} from './components/about/about.component';
 import{ RouterModule } from '@angular/router';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
-import { PipesComponent } from './components/pipes/pipes.component'
+import { PipesComponent } from './components/pipes/pipes.component';
+import { CapitalizadoPipe } from './pipes/capitalizado/capitalizado.pipe';
+import { DomseguroPipe } from './pipes/domseguro/domseguro.pipe'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { PipesComponent } from './components/pipes/pipes.component'
     AboutComponent,
     BuscadorComponent,
     HeroCardComponent,
-    PipesComponent
+    PipesComponent,
+    CapitalizadoPipe,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,

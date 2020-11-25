@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { HeroService } from 'src/app/services/Hero.services';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,35 @@ import { Router } from '@angular/router';
   templateUrl: './heros.component.html',
   styleUrls: ['./heros.component.css']
 })
-export class HerosComponent implements OnInit {
+export class HerosComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+
+ngOnDestroy(){
+  console.log('Destruccion!!!');
+  
+}  
+
+ngAfterViewChecked(){
+console.log('Evento AfterViewChecked');
+
+}
+
+ngAfterViewInit(){
+  console.log('Evento AfterViewInit');
+}  
+
+ngAfterContentChecked(){
+  console.log('Evento AfterContentChecked');
+  
+}
+
+ngAfterContentInit(){
+    console.log('Evento AfterContentInit');
+  }
+
+ngDoCheck(){
+  console.log('Evento DoCheck');
+  
+}  
 
   constructor( private heroService: HeroService, private _aRouter: Router) { }
 
